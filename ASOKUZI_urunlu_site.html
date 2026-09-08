@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASOKUZI — 3D Dijital Deneyim ve Yaratıcı Tasarım</title>
+  <meta name="description" content="ASOKUZI, modern 3D deneyimler, yaratıcı dijital tasarım ve premium web çözümleri sunan özgün bir marka. Keşfet ve iletişime geç.">
+  <meta name="keywords" content="ASOKUZI, Asokuzi, 3D tasarım, dijital deneyim, yaratıcı tasarım, web tasarım, 3D web sitesi">
+  <meta name="author" content="ASOKUZI">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#05060a">
+  <link rel="canonical" href="https://asokuzi.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ASOKUZI">
+  <meta property="og:title" content="ASOKUZI — 3D Dijital Deneyim ve Yaratıcı Tasarım">
+  <meta property="og:description" content="Modern 3D deneyimler, yaratıcı dijital tasarım ve premium web çözümleri.">
+  <meta property="og:url" content="https://asokuzi.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASOKUZI — 3D Dijital Deneyim">
+  <meta name="twitter:description" content="ASOKUZI'nin modern ve interaktif 3D dijital dünyasını keşfet.">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ASOKUZI",
+    "url":"https://asokuzi.com/",
+    "description":"3D dijital deneyimler ve yaratıcı tasarım markası"
+  }
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Arial,sans-serif;background:#05060a;color:#fff;
+      overflow-x:hidden;
+    }
+    #scene{position:fixed;inset:0;z-index:-2}
+    .glow{position:fixed;width:45vw;height:45vw;border-radius:50%;
+      background:radial-gradient(circle,rgba(92,72,255,.18),transparent 65%);
+      top:-15vw;right:-10vw;z-index:-1;pointer-events:none}
+    header{
+      position:fixed;top:0;left:0;right:0;height:76px;z-index:10;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 6vw;background:rgba(5,6,10,.48);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .logo{font-size:24px;font-weight:800;letter-spacing:-1px}
+    .logo span{opacity:.45}
+    nav{display:flex;gap:30px}
+    nav a{color:#bbb;text-decoration:none;font-size:14px;transition:.25s}
+    nav a:hover{color:#fff}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:999px;text-decoration:none;
+      color:#fff;background:#fff;color:#08090d;font-weight:700;font-size:14px;
+      transition:.25s;box-shadow:0 10px 35px rgba(255,255,255,.08)
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,255,255,.16)}
+    main{min-height:100vh}
+    .hero{
+      min-height:100vh;display:flex;align-items:center;padding:130px 9vw 80px;
+      position:relative
+    }
+    .hero-copy{max-width:720px}
+    .eyebrow{color:#aaa;text-transform:uppercase;letter-spacing:4px;font-size:11px;margin-bottom:20px}
+    h1{font-size:clamp(64px,11vw,150px);line-height:.84;letter-spacing:-.075em}
+    h1 em{font-style:normal;background:linear-gradient(110deg,#fff,#777);
+      -webkit-background-clip:text;color:transparent}
+    .lead{max-width:550px;color:#a7a9b1;font-size:18px;line-height:1.7;margin:34px 0}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .ghost{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:#fff}
+    section{padding:120px 9vw}
+    .section-title{font-size:clamp(40px,6vw,80px);letter-spacing:-.06em;margin-bottom:45px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      min-height:300px;border:1px solid rgba(255,255,255,.09);
+      background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+      border-radius:28px;padding:30px;backdrop-filter:blur(14px);
+      transition:.35s;transform-style:preserve-3d
+    }
+    .card:hover{transform:translateY(-8px) rotateX(2deg);border-color:rgba(255,255,255,.22)}
+    .num{font-size:12px;color:#777}
+    .card h3{font-size:28px;margin:80px 0 12px;letter-spacing:-.04em}
+    .card p{color:#92959e;line-height:1.6}
+    .showcase{
+      border:1px solid rgba(255,255,255,.1);border-radius:36px;padding:55px;
+      background:rgba(255,255,255,.035);display:flex;justify-content:space-between;
+      align-items:center;gap:40px
+    }
+    .showcase p{color:#9699a3;max-width:540px;line-height:1.7}
+    footer{padding:50px 9vw;border-top:1px solid rgba(255,255,255,.08);color:#666;
+      display:flex;justify-content:space-between}
+
+    #products{padding-top:40px}.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .product-card{overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));transition:.35s;backdrop-filter:blur(14px)}
+    .product-card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.24)}
+    .product-visual{height:290px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.13),transparent 58%);position:relative}
+    .product-icon{font-size:92px;filter:drop-shadow(0 20px 25px rgba(0,0,0,.5))}.product-info{padding:28px}
+    .product-info h3{font-size:29px;margin:10px 0 12px;letter-spacing:-.04em}.product-info p{color:#92959e;line-height:1.65;min-height:76px}
+    .product-tag{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:2px}.price{display:inline-block;margin-top:20px;font-weight:700;color:#fff}
+    @media(max-width:800px){.products-grid{grid-template-columns:1fr}.product-visual{height:240px}}
+    @media(max-width:800px){
+      nav{display:none}.cards{grid-template-columns:1fr}.showcase{flex-direction:column;align-items:flex-start}
+      section{padding:90px 7vw}.hero{padding-left:7vw;padding-right:7vw}
+    }
+  </style>
+</head>
+<body>
+<canvas id="scene"></canvas><div class="glow"></div>
+
+<header>
+  <div class="logo">ASOKUZI<span>®</span></div>
+  <nav>
+    <a href="#home">Ana Sayfa</a><a href="#about">Hakkında</a><a href="#products">Ürünler</a><a href="#work">Deneyim</a>
+  </nav>
+  <a class="btn" href="#contact">İletişim</a>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow">Digital / 3D / Creative</div>
+      <h1>ASO<br><em>KUZI.</em></h1>
+      <p class="lead">ASOKUZI; dijital dünyayı üç boyutlu bir deneyime dönüştüren modern, güçlü ve özgün bir yaratıcı tasarım markasıdır.</p>
+      <div class="actions">
+        <a class="btn" href="#work">Keşfet</a>
+        <a class="btn ghost" href="#about">Daha fazla</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="eyebrow">01 — Yaklaşım</div>
+    <h2 class="section-title">Basit görünür.<br>Güçlü hissettirir.</h2>
+    <div class="cards">
+      <article class="card"><div class="num">01</div><h3>3D Dünya</h3><p>Fare hareketlerine tepki veren canlı bir sahne ve derinlik hissi.</p></article>
+      <article class="card"><div class="num">02</div><h3>Premium Tasarım</h3><p>Koyu arayüz, cam efektleri ve güçlü tipografi ile profesyonel görünüm.</p></article>
+      <article class="card"><div class="num">03</div><h3>Hızlı Deneyim</h3><p>Mobil uyumlu, tek dosyada çalışan ve kolayca özelleştirilebilen yapı.</p></article>
+    </div>
+  </section>
+
+
+  <section id="products" aria-labelledby="products-title"><div class="eyebrow">03 — Ürünler</div><h2 class="section-title" id="products-title">ASOKUZI<br>koleksiyonu.</h2><div class="products-grid">
+  <article class="product-card"><div class="product-visual"><div class="product-icon">🎮</div></div><div class="product-info"><span class="product-tag">PS5 Aksesuar</span><h3>PS Controller Stand</h3><p>PS5 kolu ve kulaklık için düzenli, şık ve masaüstü kullanımına uygun stand.</p><span class="price">Fiyat yakında</span></div></article>
+  <article class="product-card"><div class="product-visual"><div class="product-icon">🔨</div></div><div class="product-info"><span class="product-tag">Fidget</span><h3>Whack-a-Mole Clicker Fidget</h3><p>Stres atmak ve eğlenmek için tasarlanmış eğlenceli tıklamalı fidget.</p><span class="price">Fiyat yakında</span></div></article>
+  <article class="product-card"><div class="product-visual"><div class="product-icon">🚗</div></div><div class="product-info"><span class="product-tag">Koleksiyon</span><h3>Hot Wheels Standı</h3><p>Kutulu Regular Hot Wheels arabalarını düzenli ve şık şekilde sergilemek için stand.</p><span class="price">Fiyat yakında</span></div></article>
+  <article class="product-card"><div class="product-visual"><div class="product-icon">🔑</div></div><div class="product-info"><span class="product-tag">36'lı Stand</span><h3>Anahtarlık Standı</h3><p>36 anahtarlık için sergileme standı. Dumpling, TNT, Grogu, Groot, Beer, Super Mario, GTA 6 ve daha fazlası.</p><span class="price">Fiyat yakında</span></div></article>
+</div></section>
+
+  <section id="work">
+    <div class="eyebrow">04 — Deneyim</div>
+    <div class="showcase">
+      <div>
+        <h2 class="section-title" style="margin:0 0 18px">Gelecek<br>burada.</h2>
+        <p>Asokuzi için hazırlanmış interaktif 3D sahne, imleç hareketiyle perspektif değiştirir. Sayfayı kaydırdıkça içerik akıcı şekilde devam eder.</p>
+      </div>
+      <a class="btn" href="#contact">Asokuzi'yi keşfet</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="eyebrow">05 — İletişim</div>
+    <h2 class="section-title">Bir fikir var mı?</h2>
+    <a class="btn" href="mailto:hello@asokuzi.com">hello@asokuzi.com</a>
+  </section>
+</main>
+
+<footer><span>© 2026 ASOKUZI</span><span>Designed in 3D</span></footer>
+
+<script>
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');
+let w,h,mouse={x:.5,y:.5},points=[];
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;points=[];
+ for(let i=0;i<110;i++)points.push({x:Math.random()*w,y:Math.random()*h,z:Math.random()*1});
+}
+function draw(){
+ ctx.clearRect(0,0,w,h);
+ for(const p of points){
+   const dx=(mouse.x-.5)*35*p.z,dy=(mouse.y-.5)*35*p.z;
+   const x=p.x+dx,y=p.y+dy,r=.6+2*p.z;
+   ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${.08+.22*p.z})`;ctx.fill();
+ }
+ requestAnimationFrame(draw);
+}
+addEventListener('resize',resize);
+addEventListener('mousemove',e=>{mouse.x=e.clientX/w;mouse.y=e.clientY/h});
+resize();draw();
+</script>
+</body>
+</html>
