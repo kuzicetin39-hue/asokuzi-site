@@ -221,22 +221,18 @@ resize();draw();
 
     // Scroll ile ilgili kodlarınız buradaysa
 }); // <-- Scroll fonksiyonunun kapanışı
+window.addEventListener('scroll', () => {
+    // Scroll kodları
+});
 
-// 224. satırdaki resize event listener'ını düzgünce açıp kapatın:
 window.addEventListener('resize', () => {
     resizeCanvas();
-}); // <-- Eksik olan ve hataya yol açan kapatma burası!
+});
 
-// resizeCanvas fonksiyon tanımı tek başına ve dışarıda olmalı:
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-
-// ... animate() 
-
-
-
     nav a:hover {
       color: #ffcc00;
     }
