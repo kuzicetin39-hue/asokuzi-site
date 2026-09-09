@@ -186,7 +186,116 @@ function draw(){
 }
 addEventListener('resize',resize);
 addEventListener('mousemove',e=>{mouse.x=e.clientX/w;mouse.y=e.clientY/h});
-resize();draw();
+resize();draw();</html><!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asoküzi | Eğlenceli Ürünler</title>
+  <meta name="description" content="Asoküzi - Eğlenceli ve kaliteli ürünleri keşfedin.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .hero {
+      min-height: 430px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff, #eeeeee);
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 58px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 28px;
+    }
+    .button {
+      display: inline-block;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: #ffcc00;
+      color: #111;
+      transform: scale(1.05);
+    }
+    .products {
+      padding: 70px 7%;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 45px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.14);
+    }
+    .product-image {
+      width: 100%;
+      height: 330px;
+      object-fit: contain;
+      background: white;
+      padding: 15px;
+    }
+
 </script>
 </body>
 </html>
